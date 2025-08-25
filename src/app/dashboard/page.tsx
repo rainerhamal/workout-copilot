@@ -4,7 +4,7 @@ import WorkoutPlanTable from "../ui/table";
 import Chat from "../ui/chatBox";
 // import ThemeToggle from "../ui/ThemeToggle";
 
-export default function Home ()
+export default function Page ()
 {
   // const query = searchParams?.query || '';
 
