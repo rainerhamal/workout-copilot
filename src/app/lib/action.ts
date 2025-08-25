@@ -25,21 +25,25 @@ export const runGeneratedSQLQuery = async ( query: string ) =>
         throw new Error( "Only SELECT, INSERT, UPDATE, and DELETE queries are allowed" );
     }
 
-    let data: any;
+    let data;
     try
     {
         data = await pool.query( query );
-    } catch ( e: any )
+    } catch ( e )
     {
-        if ( e.message.includes( 'relation "transactions" does not exist' ) )
-        {
+        if (
+            typeof e === "object" &&
+            e !== null &&
+            "message" in e &&
+            typeof (e as Error).message === "string" &&
+            (e as Error).message.includes('relation "transactions" does not exist')
+        ) {
             console.log(
                 "Table does not exist, creating and seeding it with dummy data now...",
             );
             // throw error
-            throw Error( "Table does not exist" );
-        } else
-        {
+            throw Error("Table does not exist");
+        } else {
             throw e;
         }
     }
