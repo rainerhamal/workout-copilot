@@ -1,3 +1,70 @@
+# Workout Copilot
+
+A minimal working prototype of a Next.js app for managing workout plans and supplement recommendations, featuring:
+
+- Next.js 15 (App Router)
+- PostgreSQL (via Vercel Postgres or Supabase)
+- AI-powered chat (OpenAI, LangChain, ai-sdk)
+- Real-time updates with Supabase
+- TypeScript, Tailwind CSS, and modern UI
+
+## Features
+
+- Create, view, and manage workout plans
+- AI chat copilot recommends supplements based on your workout
+- Each recommendation is tied to a workout plan
+- Real-time table updates when data changes
+- Modern, responsive UI
+
+## Getting Started
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/your-username/workout-copilot.git
+cd workout-copilot
+```
+
+### 2. Install dependencies
+```bash
+npm install
+```
+
+### 3. Set up environment variables
+Create a `.env.local` file in the root directory and add:
+```
+POSTGRES_URL=your_postgres_connection_string
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+OPENAI_API_KEY=your_openai_api_key
+```
+
+### 4. Database setup
+- Ensure your database has the following tables:
+	- `workoutplan` (id, date, name, sets, reps)
+	- `copilotresponse` (id, workoutplan_id, date, recommendation)
+- You can use the provided seed script:
+```bash
+npm run seed
+```
+
+### 5. Run the development server
+```bash
+npm run dev
+```
+
+Visit [http://localhost:3000](http://localhost:3000) to use the app.
+
+## Tech Stack
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+- PostgreSQL
+- Supabase
+- OpenAI, LangChain, ai-sdk
+
+## License
+MIT
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
