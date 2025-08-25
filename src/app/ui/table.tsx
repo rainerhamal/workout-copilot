@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 import { getWorkoutPlans, getCopilotResponses } from '../lib/data';
 
 export default async function WorkoutPlanTable ()

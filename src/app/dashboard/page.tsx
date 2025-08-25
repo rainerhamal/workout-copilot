@@ -1,5 +1,5 @@
-import Image from "next/image";
-import { Suspense } from "react";
+// import Image from "next/image";
+// import { Suspense } from "react";
 import WorkoutPlanTable from "../ui/table";
 import Chat from "../ui/chatBox";
 // import ThemeToggle from "../ui/ThemeToggle";
