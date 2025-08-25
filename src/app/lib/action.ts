@@ -25,11 +25,11 @@ export const runGeneratedSQLQuery = async ( query: string ) =>
         throw new Error( "Only SELECT, INSERT, UPDATE, and DELETE queries are allowed" );
     }
 
-    let data;
+    let data: { rows: Result[] }; // or use the actual type returned by pool.query
     try
     {
         data = await pool.query( query );
-    } catch ( e )
+    } catch ( e: unknown )
     {
         if (
             typeof e === "object" &&
@@ -43,11 +43,10 @@ export const runGeneratedSQLQuery = async ( query: string ) =>
                 "Table does not exist, creating and seeding it with dummy data now...",
             );
             throw Error( "Table does not exist" );
-            } else
-            {
-                throw e;
-            }
+        } else
+        {
+            throw e;
         }
-    
-        return data.rows as Result[];
-    };
+    }
+    return data.rows as Result[];
+};
