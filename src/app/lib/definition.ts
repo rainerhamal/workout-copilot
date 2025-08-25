@@ -1,4 +1,4 @@
-export type defintion = {
+export type users = {
     id: string;
     name: string;
     height: number;
@@ -18,6 +18,7 @@ export type workoutPlan = {
 export type copilotResponse = {
     id: string;
     recommendation: string;
+    workoutplan_id: string;
 }
 
 export type Message = {

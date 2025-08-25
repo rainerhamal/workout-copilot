@@ -6,18 +6,24 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "seed": "node -r dotenv/config src/app/lib/seed.js"
   },
   "dependencies": {
     "@ai-sdk/openai": "^2.0.19",
     "@ai-sdk/react": "^2.0.22",
     "@heroicons/react": "^2.2.0",
+    "@langchain/core": "^0.3.72",
+    "@langchain/langgraph": "^0.4.6",
+    "@langchain/openai": "^0.6.9",
     "@radix-ui/react-icons": "^1.3.2",
     "@supabase/supabase-js": "^2.56.0",
     "@types/bcrypt": "^6.0.0",
     "@vercel/postgres": "^0.10.0",
     "ai": "^5.0.22",
     "clsx": "^2.1.1",
+    "dotenv": "^17.2.1",
+    "fs": "^0.0.1-security",
     "langchain": "^0.3.31",
     "lucide-react": "^0.541.0",
     "next": "15.5.0",
@@ -26,7 +32,8 @@
     "pg": "^8.16.3",
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "zod": "^3.25.76"
+    "zod": "^3.25.76",
+    "zod-to-json-schema": "^3.24.6"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
@@ -37,6 +44,7 @@
     "eslint": "^9",
     "eslint-config-next": "15.5.0",
     "tailwindcss": "^4",
+    "tsx": "^4.20.5",
     "typescript": "^5"
   }
 }
