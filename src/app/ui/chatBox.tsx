@@ -7,7 +7,7 @@ import { DefaultChatTransport } from 'ai';
 
 export default function Chat ()
 {
-    const { messages, sendMessage, addToolResult } = useChat( {
+    const { messages, sendMessage } = useChat( {
         transport: new DefaultChatTransport( {
             api: '/api/chat',
         } ),
